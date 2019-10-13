@@ -20,9 +20,8 @@ namespace ConsoleApp1
                 new Person(){Id=7,Name="ahmed",HiringDate=DateTime.Parse("2015/05/05")},
             };
 
-            var builder = new FilterBuilder();
             var filter = new Person() {Name="m", HiringDate = DateTime.Parse("2014/08/08") };
-            var x=  builder.GetExpression<Person, Person>(filter);
+            var x= FilterBuilder.GetExpression<Person, Person>(filter);
             var test = people.Where(x.Compile()).ToList();
         }
     }

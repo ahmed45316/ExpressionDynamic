@@ -10,9 +10,9 @@ using System.Text;
 
 namespace ExpressionGenerator
 {
-    public class FilterBuilder
+    public static class FilterBuilder
     {
-        public Expression<Func<T, bool>> GetExpression<T,U>(U filterDto) where T : class
+        public static Expression<Func<T, bool>> GetExpression<T,U>(U filterDto) where T : class
         {
             var predicate = PredicateBuilder.New<T>(true);
             var param = Expression.Parameter(typeof(T), "x");
